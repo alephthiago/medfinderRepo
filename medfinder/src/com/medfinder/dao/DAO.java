@@ -9,4 +9,7 @@ public interface DAO<T,PK> {
 	public List<T> listAll();
 	public T find(PK id);
 	public void update(T entity);
+	
+	
+	//teste
 }
