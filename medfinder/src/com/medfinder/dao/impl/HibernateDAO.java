@@ -1,4 +1,4 @@
-package com.zurich.dao.impl;
+package com.medfinder.dao.impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;

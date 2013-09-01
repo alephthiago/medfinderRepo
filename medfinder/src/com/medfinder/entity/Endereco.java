@@ -2,9 +2,12 @@ package com.medfinder.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+@Entity
 @Table(name="AM_ENDERECO")
 public class Endereco implements Serializable{		
 	private static final long serialVersionUID = -7163407954172996476L;

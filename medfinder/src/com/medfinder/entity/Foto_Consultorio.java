@@ -2,10 +2,12 @@ package com.medfinder.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
+@Entity
 @Table(name="AM_FOTO_CONSULTORIO")
 public class Foto_Consultorio implements Serializable {
 

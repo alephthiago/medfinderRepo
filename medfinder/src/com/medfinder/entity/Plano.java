@@ -2,13 +2,14 @@ package com.medfinder.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
+@Entity
 @Table(name="AM_PLANO")
 @SequenceGenerator(name="seqPlano",
 sequenceName="SEQ_PLANO",allocationSize=1)
@@ -20,7 +21,7 @@ public class Plano implements Serializable{
 	
 	private String ds_plano;
 	
-	@JoinColumn(name="CD_OPERADORA")
+	@JoinColumn(name="ID_OPERADORA")
 	@ManyToOne(targetEntity=Operadora.class)
 	private Operadora operadora;
 	

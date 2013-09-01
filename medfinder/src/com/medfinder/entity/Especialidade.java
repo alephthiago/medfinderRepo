@@ -2,9 +2,11 @@ package com.medfinder.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
 @Table(name="AM_ESPECIALIDADE")
 public class Especialidade implements Serializable {
 

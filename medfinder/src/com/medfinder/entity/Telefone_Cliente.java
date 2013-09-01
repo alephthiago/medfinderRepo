@@ -3,8 +3,12 @@ package com.medfinder.entity;
 import java.io.Serializable;
 import java.math.BigInteger;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
+@Entity
 @Table(name="AM_TELEFONE_CLIENTE")
 public class Telefone_Cliente implements Serializable {
 

@@ -3,8 +3,13 @@ package com.medfinder.entity;
 import java.io.Serializable;
 import java.math.BigInteger;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="AM_TELEFONE_CONSULTORIO")
 public class Telefone_Consultorio implements Serializable {
 
 	
@@ -17,6 +22,10 @@ public class Telefone_Consultorio implements Serializable {
 	private int id_telefone;
 	
 	private BigInteger numero;
+	
+	
+	
+	
 
 	public int getId_telefone() {
 		return id_telefone;

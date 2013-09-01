@@ -1,12 +1,16 @@
 package com.medfinder.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+
+@Entity
 @Table(name="AM_MEDICO")
 public class Medico implements Serializable {
 
@@ -22,7 +26,7 @@ public class Medico implements Serializable {
 	private String crm;
 	private String email;
 	private String senha;
-	private double vl_consulta;
+	private BigDecimal vl_consulta;
 	
 	@Lob
 	private byte[] foto;
@@ -77,10 +81,11 @@ public class Medico implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public double getVl_consulta() {
+	
+	public BigDecimal getVl_consulta() {
 		return vl_consulta;
 	}
-	public void setVl_consulta(double vl_consulta) {
+	public void setVl_consulta(BigDecimal vl_consulta) {
 		this.vl_consulta = vl_consulta;
 	}
 	public byte[] getFoto() {

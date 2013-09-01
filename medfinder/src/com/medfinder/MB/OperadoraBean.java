@@ -6,8 +6,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import com.medfinder.dao.impl.OperadoraDAOImpl;
 import com.medfinder.entity.Operadora;
-import com.zurich.dao.impl.OperadoraDAOImpl;
 
 @ManagedBean
 @RequestScoped

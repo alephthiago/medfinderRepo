@@ -3,12 +3,13 @@ package com.medfinder.entity;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
+@Entity
 @Table(name="AM_CLIENTE")
 public class Cliente implements Serializable {
 
