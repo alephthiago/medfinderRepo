@@ -24,5 +24,7 @@ public class OperadoraDAOImpl extends HibernateDAO<Operadora,String> {
 		return operadoras;
 	}
 	
+	
+	
 
 }

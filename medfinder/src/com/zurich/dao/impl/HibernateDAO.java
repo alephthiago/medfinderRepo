@@ -42,7 +42,8 @@ public abstract class HibernateDAO<T, K> implements DAO<T, K> {
 	@Override
 	public void removeById(K id) {
 		T entity = em.find(entityClass, id);
-		em.remove(entity);
+		
+		em.remove(em.merge(entity));
 		em.getTransaction().commit();
 	}
 	
@@ -50,8 +51,8 @@ public abstract class HibernateDAO<T, K> implements DAO<T, K> {
 	@Override
 	public void remove(T entity) {
 		// para forçar a entidade ser gerenciada pelo em
-		em.merge(entity);
-		em.remove(entity);
+		
+		em.remove(em.merge(entity));
 		em.getTransaction().commit();
 	}
 

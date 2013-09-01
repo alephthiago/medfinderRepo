@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" >
+
+<ui:composition template="/template.xhtml">
+	<ui:define name="user"></ui:define>
+	<ui:define name="menu"></ui:define>
+	<ui:define name="main_content">
+		<h:form id="formLogin">
+		<h:panelGrid>
+		
+		
+		<p:growl id="messages" showDetail="true" life="5000"></p:growl>
+		
+			<h:outputText value="Usuário:"></h:outputText>
+			<h:inputText value="#{loginBean.usuario}" required="true">
+				<f:validateLength  maximum="10"></f:validateLength>
+				<f:validateRegex pattern="[A-Z].*"></f:validateRegex>
+			</h:inputText>
+			
+			<h:outputText value="Senha:"></h:outputText>
+			<h:inputSecret value="#{loginBean.senha}" required="true">
+				<f:validateLength  maximum="8"></f:validateLength>
+			</h:inputSecret>
+			
+			<h:commandButton value="Logar" action="#{loginBean.autorizar}" id="btnLogar"></h:commandButton>
+		</h:panelGrid>
+		</h:form>	
+	</ui:define>
+	
+</ui:composition>
+</html>

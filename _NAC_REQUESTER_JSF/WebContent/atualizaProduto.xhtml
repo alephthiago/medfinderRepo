@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" >
+
+<ui:composition template="/template.xhtml">
+	
+	<ui:define name="main_content">
+		
+		
+		<h:form id="frmAtualizaProduto" rendered="#{loginBean != null}">		
+		<p:growl id="messages" showDetail="true" life="5000"></p:growl>
+					
+			<h:panelGrid border="1" columns="5" id="resultadoConsultaAtualiza" >
+				<h:outputText value="Código do Produto: "></h:outputText>				
+				<h:outputText  value="Descrição do Produto"></h:outputText>
+				<h:outputText  value="Preço Unitário"></h:outputText>
+				<h:outputText  value="Campanha"></h:outputText>
+				<h:outputText  value="Quantidade em Estoque"></h:outputText>
+				<h:inputText id="txtCodProduto" value="#{estoqueBean.codProduto}" required="true">
+				<f:ajax event="keyup" listener="#{estoqueBean.completaCliente}"  execute="@this" render="resultadoConsultaAtualiza"></f:ajax>
+				</h:inputText>
+				<h:inputText  value="#{estoqueBean.produto.descricao}" required="true"></h:inputText>
+				<h:inputText  value="#{estoqueBean.produto.preco}" required="true">				
+					
+				</h:inputText>
+				<h:inputText  value="#{estoqueBean.produto.campanha_promocional}" required="true"></h:inputText>
+				<h:inputText  value="#{estoqueBean.produto.quantidade}" required="true"></h:inputText>				
+			</h:panelGrid>
+			<h:commandButton styleClass="button" id="btnAtualizarProduto" value="Atualizar Produto" 
+				action="#{estoqueBean.atualizarProduto}">				
+				</h:commandButton>
+		
+		</h:form>	
+	</ui:define>
+	
+</ui:composition>
+</html>

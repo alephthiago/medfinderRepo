@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+<h:head>
+		<title>FIAP CORPORATION</title>
+		<h:outputStylesheet name="template.css" library="css"></h:outputStylesheet>
+		<meta http-equiv="Pragma" content="no-cache" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+	</h:head>
+
+	<h:body>
+
+		<div id="main">
+			<div id="header">
+				<ui:insert name="header">
+					<div id="logo">
+						<h:graphicImage name="logo_principal.gif" library="imagens"></h:graphicImage>
+					</div>
+					<div id="complemento">
+						<h:outputText id="corporate" value="Corporate"></h:outputText>
+					</div>					
+				</ui:insert>
+				<ui:insert name="user">
+						<div class="usuario">
+								<h:outputText value="#{loginBean.usuario}"></h:outputText>
+								<br></br>						
+								<h:link value="Logout" outcome="login" action="#{loginBean.deslogar}"></h:link>
+						</div>
+				
+				</ui:insert>
+				
+				
+
+				<div id="menu">
+					<ui:insert name="menu">
+						<ul>
+							<li><h:outputLink value="pesquisaProduto.xhtml">Pesquisar produtos</h:outputLink></li>
+							<li><h:outputLink value="atualizaProduto.xhtml">Atualização de produtos</h:outputLink></li>
+							<li><h:outputLink value="excluiProduto.xhtml">Remoção de produtos</h:outputLink></li>
+							<li><h:outputLink value="adicionaProduto.xhtml">Inclusão de produtos</h:outputLink></li>
+							<li><h:outputLink value="estatisticaProdutos.xhtml">Gráfico</h:outputLink></li>
+							
+						</ul>
+					</ui:insert>
+				</div>
+			</div>
+
+			<div id="main_content">
+				<ui:insert name="main_content">
+					
+				</ui:insert>
+			</div>
+			<!--fim do main content-->
+
+			<div id="footer">
+				<ui:insert name="footer">
+					
+				</ui:insert>
+			</div>
+
+		</div>
+		<!--fim main container-->
+
+	</h:body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</f:view>
+</html>
