@@ -35,7 +35,7 @@ public class OperadoraBean {
 	}
 
 	public void buscarTodasOperadoras() {
-		operadoras = dao.buscarTodasOperadoras();
+		operadoras = dao.listAll();
 	}
 
 	public String getNomeBusca() {
@@ -67,7 +67,7 @@ public class OperadoraBean {
 
 		operadora = new Operadora();
 
-		operadoras = dao.buscarTodasOperadoras();
+		operadoras = dao.listAll();
 	}
 
 	public void incluirOperadora(){
