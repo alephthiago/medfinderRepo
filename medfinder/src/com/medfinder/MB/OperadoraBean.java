@@ -22,24 +22,11 @@ public class OperadoraBean {
 	private String nomeBusca;
 	
 	
-	OperadoraDAOImpl dao = new OperadoraDAOImpl();	
-	
-	
-	
-	
-	
-	
-	
+	OperadoraDAOImpl dao = new OperadoraDAOImpl();		
 	
 	public void buscarTodasOperadoras(){			
 		operadoras = dao.buscarTodasOperadoras();			
-	}
-	
-	public void cadastrarNovo(){
-		operadora = new Operadora();
-	}
-
-	
+	}	
 	
 	public String getNomeBusca() {
 		return nomeBusca;
@@ -69,9 +56,17 @@ public class OperadoraBean {
 	@PostConstruct
 	public void inicializarLista() {
 		
+		operadora = new Operadora();
+		
 		operadoras = dao.buscarTodasOperadoras();		
 	}
 	
+	public void incluirOperadora(){
+		if(operadora.getDs_operadora() != null){
+			dao.insert(operadora);			
+		}
+		
+	}
 	
 	
 	

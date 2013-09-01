@@ -17,7 +17,7 @@ public class OperadoraDAOImpl extends HibernateDAO<Operadora,String> {
 	public List<Operadora> buscarTodasOperadoras(){
 		List<Operadora> operadoras = new ArrayList<Operadora>();
 		
-		TypedQuery<Operadora> query = em.createQuery("from Apolice", Operadora.class);
+		TypedQuery<Operadora> query = em.createQuery("from Operadora", Operadora.class);
 				
 		operadoras = query.getResultList();		
 		

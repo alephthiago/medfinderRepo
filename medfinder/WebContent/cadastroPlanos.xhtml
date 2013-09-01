@@ -8,16 +8,30 @@
 	xmlns:p="http://primefaces.org/ui">
 	<f:view>
 		<h:body>
+			<h:form>
+			<h:outputText>Inserir novos planos</h:outputText>
+			<br/>			
+				<h:panelGrid>
+					<h:outputText value="Nome da operadora" styleClass="textField" />
+				<h:inputText value="#{operadoraBean.operadora.ds_operadora}"					
+					id="txtNomeOperadora" styleClass="" />
+
+				<h:commandButton value="Incluir" id="btnIncluirOperadora"
+					actionListener="#{operadoraBean.incluirOperadora()}" styleClass="button">
+				</h:commandButton>
+				
+				</h:panelGrid>
+			</h:form>
+			
+		
+		
 			<p:fieldset>
-				<p:dataTable value="#{operadoraBean.operadoras}" var="op"
-					paginator="true" rows="2" paginatorPosition="top"
-					rowKey="#{op.id_operadora}"
-					id="tabelaOperadora"
+				<p:dataTable value="#{operadoraBean.operadoras}" var="op"				
 					rendered="#{operadoraBean.operadoras != null}">					
 					<p:column headerText="Id">
 						#{op.id_operadora}
 					</p:column>
-					<p:column headerText="#{pacoteBundle.description_column}">
+					<p:column headerText="Operadoras">
 						#{op.ds_operadora}
 					</p:column>					
 				</p:dataTable>
