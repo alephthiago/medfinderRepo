@@ -19,10 +19,7 @@ public class OperadoraDAOImpl extends HibernateDAO<Operadora,String> {
 		
 		TypedQuery<Operadora> query = em.createQuery("from Apolice", Operadora.class);
 				
-		operadoras = query.getResultList();
-		
-		
-		
+		operadoras = query.getResultList();		
 		
 		return operadoras;
 	}

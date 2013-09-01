@@ -2,9 +2,15 @@ package com.medfinder.MB;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
 import com.medfinder.entity.Operadora;
 import com.zurich.dao.impl.OperadoraDAOImpl;
 
+@ManagedBean
+@RequestScoped
 public class OperadoraBean {
 	
 	
@@ -17,6 +23,13 @@ public class OperadoraBean {
 	
 	
 	OperadoraDAOImpl dao = new OperadoraDAOImpl();	
+	
+	
+	
+	
+	
+	
+	
 	
 	public void buscarTodasOperadoras(){			
 		operadoras = dao.buscarTodasOperadoras();			
@@ -53,6 +66,11 @@ public class OperadoraBean {
 	}
 	
 	
+	@PostConstruct
+	public void inicializarLista() {
+		
+		operadoras = dao.buscarTodasOperadoras();		
+	}
 	
 	
 	

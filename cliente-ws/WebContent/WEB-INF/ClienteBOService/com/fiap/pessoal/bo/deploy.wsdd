@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ClienteBOService WSDL service -->
+
+  <service name="ClienteBO" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://bo.pessoal.fiap.com"/>
+      <parameter name="wsdlServiceElement" value="ClienteBOService"/>
+      <parameter name="schemaQualified" value="http://to.pessoal.fiap.com,http://bo.pessoal.fiap.com"/>
+      <parameter name="wsdlServicePort" value="ClienteBO"/>
+      <parameter name="className" value="com.fiap.pessoal.bo.ClienteBO"/>
+      <parameter name="wsdlPortType" value="ClienteBO"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://bo.pessoal.fiap.com" xmlns:retNS="http://bo.pessoal.fiap.com" xmlns:rtns="http://to.pessoal.fiap.com" name="consultarCliente" qname="operNS:consultarCliente" returnQName="retNS:consultarClienteReturn" returnType="rtns:ClienteTO" soapAction="">
+        <parameter xmlns:pns="http://bo.pessoal.fiap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:codCliente" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="consultarCliente"/>
+
+      <typeMapping xmlns:ns="http://to.pessoal.fiap.com" qname="ns:ClienteTO" type="java:com.fiap.pessoal.to.ClienteTO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/_templatePWAI.xhtml">
+	<ui:define name="main_content">
+
+		<h:form id="frm1">
+			<p:panel id="panel" header="Solicitação de Empréstimo"
+				style="margin-bottom:8px;">
+				<p:messages id="messages" />
+				<h:panelGrid columns="2">
+					<h:outputText value="Valor do Emprestimo: " />
+					<h:inputText id="emprestimo"
+						value="#{calculoEmprestimoBean.valorEmprestimo}"></h:inputText>
+					<h:outputText value="Juros: "></h:outputText>
+					<p:spinner id="juros" value="#{calculoEmprestimoBean.juros}"></p:spinner>
+					<p:commandButton value="Invalida Calculo" icon="ui-icon-disk"
+						actionListener="#{calculoEmprestimoBean.btnInvalidaCalculo}"
+						update="panel">
+					</p:commandButton>
+					<p:commandButton value="Calculo Taxa"
+						actionListener="#{calculoEmprestimoBean.btnCalculoTaxa}"
+						update="panel" icon="ui-icon-disk">
+					</p:commandButton>
+					<h:outputText value="Valor Total do Empréstimo: "></h:outputText>
+					<h:outputText id="valorTotalEmprestimo" value="#{calculoEmprestimoBean.valorTotalEmprestimo}"></h:outputText>
+				</h:panelGrid>
+			</p:panel>
+			<p:commandButton value="Disabled" disabled="true" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
